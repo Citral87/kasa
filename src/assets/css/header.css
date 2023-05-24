@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+  width: 80%; 
+  text-align: center;
+  margin-top: 15px;
+  }
+  
+  
+header img {
+    height: 45px;
+    width: 120px;
+}
+  
+  header ul {
+    list-style-type: none;
+  }
+  
+  header li {
+    display: inline;
+    margin-right: 60px;
+  }
+  
+  header a {
+    color: red;
+    text-decoration:none
+  }
+  

@@ -1,0 +1,22 @@
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  
+  .footer span {
+    vertical-align: middle;
+  }
+  
+  .copy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .copy span {
+    margin-left: 5px;
+  }
+  
