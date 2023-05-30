@@ -1,0 +1,26 @@
+body {
+    font-family: 'Montserrat';
+}
+
+.NotFound__content {
+    text-align: center;
+  
+    color: #FF6060;
+}
+
+.NotFound__content h1 {
+    color: #FF6060;
+    font-size: 8em;
+    font-weight: bold;
+}
+
+.NotFound__content p {
+    font-size: 1.2em;
+    margin-bottom: 95px;
+    margin-top: -80px;
+}
+
+.NotFound__content a {
+    color: #FF6060;
+    text-decoration: underline;
+}

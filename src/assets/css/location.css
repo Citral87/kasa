@@ -1,0 +1,86 @@
+body {
+    font-family: Montserrat;
+    color: #FF6060
+}
+
+
+.location-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.location-image-container {
+    position: relative;
+    width: 100%;
+}
+.location-tags {
+display: flex;
+justify-content: end;
+}
+
+.image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.image-change-btn {
+    position: absolute;
+    top: 50%;
+    background-color: transparent;
+    border: none;
+    font-size: 3em;
+    color: white;
+    cursor: pointer;
+}
+
+.image-change-btn:first-child {
+    left: 5%;
+}
+
+.image-change-btn:last-child {
+    right: 5%;
+}
+
+.location-info {
+    margin-top: 20px;
+    width: 90%;
+}
+
+.location-title {
+    font-size: 1.2em;
+}
+
+.location-location {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.location-tag {
+    background-color: #FF6060;
+    color: white;
+    margin-right: 10px;
+    border-radius: 10px;
+    border-width : 0;
+}
+
+.location-host-name {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.location-collapse-btn {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+}
+
+.location-collapse-btn .arrow {
+    margin-left: 10px;
+}
+
