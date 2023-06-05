@@ -18,13 +18,18 @@ font-family: 'Montserrat';
 
 .overlay-text {
   position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top:120px;
   color: white;
   text-align: center;
-  font-size: 25px;
+ font-weight: 500;
+  width: 100%;  
 }
+
+
+  
+
+
+
 
 .logements-container {
   display: grid;
