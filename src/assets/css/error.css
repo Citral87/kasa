@@ -10,17 +10,19 @@ body {
 
 .NotFound__content h1 {
     color: #FF6060;
-    font-size: 8em;
+    font-size: 10em;
     font-weight: bold;
+    margin-bottom: 40px;
 }
 
 .NotFound__content p {
     font-size: 1.2em;
     margin-bottom: 95px;
-    margin-top: -80px;
+    margin-top: -30px;
 }
 
 .NotFound__content a {
     color: #FF6060;
     text-decoration: underline;
+    font-size: 14px;
 }

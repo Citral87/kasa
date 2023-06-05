@@ -5,7 +5,10 @@ import Footer from "./component/footer.js";
 import data from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/data/logements.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import '/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/css/location.css'
+import Carousel from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/carrousel.js";
+import TagButtons from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/tags_button.js";
+import Collapse from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/collapse.js";
+import "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/css/location.css";
 
 function Location() {
   const { id } = useParams();
@@ -18,11 +21,13 @@ function Location() {
   useEffect(() => {
     const fetchedData = data.find((item) => item.id === id);
     setLocationData(fetchedData);
-  }, [id]);
+
+    if (!fetchedData) {
+      navigate("/404");
+    }
+  }, [id, navigate]);
 
   if (!locationData) {
-    navigate('/any-non-existent-route');
-
     return null;
   }
 
@@ -44,49 +49,64 @@ function Location() {
       <Header />
       <div className="location-container">
         <div className="location-image-container">
-          <button className="image-change-btn" onClick={prevImage}>{'<'}</button>
-          <img className="image" src={locationData.pictures[currentImageIndex]} alt="" />
-          <button className="image-change-btn" onClick={nextImage}>{'>'}</button>
+          <Carousel images={locationData.pictures} />
         </div>
         <div className="location-info">
           <h2 className="location-title">{locationData.title}</h2>
           <h3 className="location-location">{locationData.location}</h3>
-          <div className="location-tags">
-            {locationData.tags.map((tag, index) => (
-              <button key={index} className="location-tag">{tag}</button>
+          <TagButtons tags={locationData.tags} />
+          <div className="alignitem">
+          <div className="location-host-container">
+            <div className="location-host">
+              <img
+                className="location-host-picture"
+                src={locationData.host.picture}
+                alt={locationData.host.name}
+              />
+            </div>
+            <div className="location-host-name-container">
+              <p className="location-host-name">{locationData.host.name}</p>
+            </div>
+          </div>
+          <div className="location-ratings">
+            {[...Array(5)].map((e, i) => (
+              <FontAwesomeIcon
+                key={i}
+                icon={faStar}
+                style={{
+                  color:
+                    i < Number(locationData.rating) ? "#FF6060" : "#E3E3E3",
+                }}
+              />
+              
             ))}
+            </div>
           </div>
-          <div className="location-host">
-            <p className="location-host-name">{locationData.host.name}</p>
-            {[...Array(5)].map((e, i) => <FontAwesomeIcon key={i} icon={faStar} style={{ color: i < Number(locationData.rating) ? 'red' : 'gray' }} />)}
-          </div>
-          <div className="location-description">
-            {locationData.description && (
-              <>
-                <button
-                  className="location-collapse-btn"
-                  onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}
+          <div className="location-collapse-container">
+            <div className="location-description">
+              {locationData.description && (
+                <Collapse
+                  title="Description"
+                  isOpen={isDescriptionOpen}
+                  toggle={() => setIsDescriptionOpen(!isDescriptionOpen)}
                 >
-                  Description
-                  <div className="arrow">{isDescriptionOpen ? '<' : '>'}</div>
-                </button>
-                {isDescriptionOpen && <p>{locationData.description}</p>}
-              </>
-            )}
-          </div>
-          <div className="location-equipment">
-            {locationData.equipments && (
-              <>
-                <button className="location-collapse-btn" onClick={() => setIsEquipmentOpen(!isEquipmentOpen)}>
-                  Equipement
-                  <div className="arrow">{isEquipmentOpen ? '<' : '>'}</div>
-                </button>
-                {isEquipmentOpen &&
-                  locationData.equipments.map((item, index) => (
+                  <p>{locationData.description}</p>
+                </Collapse>
+              )}
+            </div>
+            <div className="location-equipment">
+              {locationData.equipments && (
+                <Collapse
+                  title="Equipement"
+                  isOpen={isEquipmentOpen}
+                  toggle={() => setIsEquipmentOpen(!isEquipmentOpen)}
+                >
+                  {locationData.equipments.map((item, index) => (
                     <p key={index}>{item}</p>
                   ))}
-              </>
-            )}
+                </Collapse>
+              )}
+            </div>
           </div>
         </div>
       </div>

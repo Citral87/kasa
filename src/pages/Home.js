@@ -1,9 +1,9 @@
-import React from 'react';
-import Header from './component/header';
-import Footer from '/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/footer.js';
-import Logement from '/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/card.js'; 
-import logementData from '/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/data/logements.json'; 
-import '/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/css/Home.css';
+import React from "react";
+import Header from "./component/header";
+import Footer from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/footer.js";
+import Logement from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/card.js";
+import logementData from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/data/logements.json";
+import "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/css/Home.css";
 
 function Home() {
   return (
@@ -15,7 +15,12 @@ function Home() {
       </div>
       <div className="logements-container">
         {logementData.map((logement) => (
-          <Logement key={logement.id} id={logement.id} title={logement.title} cover={logement.cover} />
+          <Logement
+            key={logement.id}
+            id={logement.id}
+            title={logement.title}
+            cover={logement.cover}
+          />
         ))}
       </div>
       <Footer />
@@ -24,8 +29,3 @@ function Home() {
 }
 
 export default Home;
-
-
-
-
-

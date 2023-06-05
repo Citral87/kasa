@@ -3,8 +3,8 @@ body {
 }
 
 .photo2 {
-    width: 80%; 
-    height: 200px; 
+    width: 93%; 
+    height: 150px; 
     margin: 0 auto;
     border-radius: 25px;  
     object-fit: cover;
@@ -12,14 +12,14 @@ body {
     margin-bottom: 40px;
 }
 
-.About .About__button, .About .collapse-content {
+.About .collapse-button, .About .collapse-content {
     background: #F7F7F7;
     border-radius: 5px;
     color: #FF6060;
     padding: 10px;
     border: none;
     cursor: pointer;
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -29,10 +29,9 @@ body {
     margin-top: 20px;
 }
 
-.About .About__button {
+.About .collapse-button {
     background: #FF6060;
     color: white;
-    
 }
 
 .About .About__button:hover {
@@ -42,7 +41,7 @@ body {
 .About .collapse-content {
     padding: 15px 20px;
     background-color: #F7F7F7;
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     color: #FF6060;
     font-family: 'Montserrat';
@@ -51,11 +50,13 @@ body {
     font-size: 16px;
     box-sizing: border-box;
 }
+
 .collapse_spaceAround {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
+
 @media screen and (max-width: 768px) {
     .About .About__button, .About .collapse-content {
         width: 90%;

@@ -2,54 +2,71 @@ body {
     font-family: Montserrat;
     color: #FF6060
 }
-
-
 .location-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-}
-
-.location-image-container {
+    flex-direction: column;  
+  }
+  
+.carousel {
     position: relative;
     width: 100%;
 }
-.location-tags {
-display: flex;
-justify-content: end;
-}
 
-.image {
+.location-image-container {
+    width: 90%;  
+  }
+  
+.carousel-image {
     width: 100%;
-    height: 260px;
+    height: 250px;
     object-fit: cover;
+    border-radius: 25px;
+    
 }
 
-.image-change-btn {
+
+.carousel-btn {
     position: absolute;
-    top: 50%;
+    align-items: center;
+    top: calc(50% - 25px); 
     background-color: transparent;
     border: none;
-    font-size: 3em;
-    color: white;
     cursor: pointer;
+    padding: 0;
+    font-size: 50px;
+    color: white;
 }
 
-.image-change-btn:first-child {
-    left: 5%;
+.carousel-btn-left {
+    left: 0;
 }
 
-.image-change-btn:last-child {
-    right: 5%;
+.carousel-btn-right {
+    right: 0;
 }
+
+.carousel-index {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1em;
+}
+
+
+
 
 .location-info {
     margin-top: 20px;
     width: 90%;
+    position: relative;
 }
 
 .location-title {
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 .location-location {
@@ -57,30 +74,146 @@ justify-content: end;
     margin-bottom: 20px;
 }
 
-.location-tag {
+.tag-button {
     background-color: #FF6060;
     color: white;
     margin-right: 10px;
     border-radius: 10px;
-    border-width : 0;
+    border-width: 0;
+    padding: 5px 18px 5px 18px;
+    margin-top: 20px;
 }
 
-.location-host-name {
-    margin-right: 10px;
-    display: inline-block;
-}
-
-.location-collapse-btn {
+.location-host-container {
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
-    background-color: transparent;
+    margin-top: -145px;
+
+}
+
+.location-host {
+    text-align: right;
+}
+
+.location-host-picture {
+    max-width: 100%;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+
+
+
+.location-ratings {
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+@media (max-width: 768px) {
+    .alignitem {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      
+    }
+    
+    .location-host-container {
+      order: 2;
+      flex-basis: 50%;
+      margin-top: 0;
+    }
+
+    .location-ratings {
+      order: 1;
+      flex-basis: 50%;
+      position: static;
+    }
+
+  
+
+    .location-host-picture {
+      height: 80px;
+    }
+  }
+
+
+.location-ratings .fa-star {
+    padding-right: 20px;
+}
+
+
+.location-collapse-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 70px;
+
+}
+
+@media (max-width: 768px) {
+    .location-collapse-container {
+        flex-direction: column;
+        
+    }
+   
+    
+    
+}
+
+
+.location-description,
+.location-equipment {
+    flex-basis: 50%;
+
+}
+
+
+.collapse-button {
+    width: 100%;
+    background-color: #FF6060;
+    color: white;
     border: none;
-    cursor: pointer;
-    padding: 0;
     text-align: left;
+    cursor: pointer;
+    padding: 18px;
+    font-size: 18px;
+    border-radius: 10px;
+
+
 }
 
-.location-collapse-btn .arrow {
-    margin-left: 10px;
+.arrow {
+    float: right;
 }
 
+.collapse-content {
+    background: #F7F7F7;
+    border-radius: 0px 0px 10px 10px;
+
+
+}
+
+.collapse-content p {
+    margin: 0;
+    padding: 20px;
+    margin-top: -10px;
+
+
+}
+
+@media (max-width: 768px) {
+ 
+    
+    .location-host-container, .location-ratings {
+      font-size: 0.8em;
+    }
+  
+   
+    
+  }

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function Logement({ id, title, cover }) {
   return (
@@ -12,5 +12,3 @@ function Logement({ id, title, cover }) {
 }
 
 export default Logement;
-
-
