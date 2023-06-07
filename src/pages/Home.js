@@ -8,11 +8,10 @@ import "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/css/
 function Home() {
   return (
     <div>
-      <Header />
-      <div className="parent-div">
-        <div className="background-image"></div>
-        <h1 className="overlay-text">Chez vous, partout et ailleurs</h1>
-      </div>
+      <Header />  
+        <div className="background-image">
+          <h1 className="overlay-text">Chez vous, partout et ailleurs</h1>
+    </div>
       <div className="logements-container">
         {logementData.map((logement) => (
           <Logement

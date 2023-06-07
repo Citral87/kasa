@@ -15,7 +15,7 @@ function About() {
     <div className="About">
       <Header />
       <img className="photo2" src={photo} alt="" />
-      <Collapse
+      <Collapse className="collapse-content_about"
         title="Fiabilité"
         isOpen={isOpen1}
         toggle={() => setIsOpen1(!isOpen1)}
@@ -25,7 +25,7 @@ function About() {
         régulièrement vérifiées par nos équipes.
       </Collapse>
 
-      <Collapse
+      <Collapse className="collapse-content_about"
         title="Respect"
         isOpen={isOpen2}
         toggle={() => setIsOpen2(!isOpen2)}

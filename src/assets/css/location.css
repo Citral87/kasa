@@ -1,36 +1,48 @@
+/*general*/
+
 body {
     font-family: Montserrat;
-    color: #FF6060
+    color: #FF6060;
+    position: relative;
 }
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 5;
+    left: 0;
+    height: 8em;
+}
+
 .location-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;  
-  }
-  
+    flex-direction: column;
+}
+
+/*carousel*/
 .carousel {
     position: relative;
     width: 100%;
+    margin-top: 30px;
 }
 
 .location-image-container {
-    width: 90%;  
-  }
-  
-.carousel-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 25px;
-    
+    width: 90%;
 }
 
+.carousel-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 25px;
+}
 
 .carousel-btn {
     position: absolute;
     align-items: center;
-    top: calc(50% - 25px); 
+    top: calc(50% - 25px);
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -40,11 +52,11 @@ body {
 }
 
 .carousel-btn-left {
-    left: 0;
+    left: 10px;
 }
 
 .carousel-btn-right {
-    right: 0;
+    right: 10px;
 }
 
 .carousel-index {
@@ -53,10 +65,17 @@ body {
     left: 50%;
     transform: translateX(-50%);
     color: white;
-    font-size: 1em;
+    font-size: 0.8em;
+    letter-spacing: -2px;
 }
 
+@media (max-width: 768px) {
+    .carousel-index {
+        display: none;
+    }
+}
 
+/* title,location*/
 
 
 .location-info {
@@ -66,14 +85,17 @@ body {
 }
 
 .location-title {
-    font-size: 1.4em;
+    font-size: 1.3em;
+    font-weight: 500;
+    width: 80%;
 }
 
 .location-location {
-    font-size: 1em;
-    margin-bottom: 20px;
+    font-size: 0.8em;
+    font-weight: 500;
 }
 
+/*button*/
 .tag-button {
     background-color: #FF6060;
     color: white;
@@ -81,15 +103,26 @@ body {
     border-radius: 10px;
     border-width: 0;
     padding: 5px 18px 5px 18px;
-    margin-top: 20px;
+    font-size: 15px;
+    margin-top: 10px;
+
 }
+
+@media (max-width: 768px) {
+    .tag-button {
+        font-size: 10px;
+        padding: 5px 9px 5px 9px;
+    }
+}
+
+/*host with picture*/
 
 .location-host-container {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    margin-top: -145px;
-
+    justify-content: end;
+    margin-top: -85px;
 }
 
 .location-host {
@@ -98,81 +131,70 @@ body {
 
 .location-host-picture {
     max-width: 100%;
-    height: 100px;
+    height: 50px;
     border-radius: 50%;
-    margin-left: 15px;
 }
 
+.location-host-name {
+    margin: 3px 5px;
+    font-size: 13px;
+}
 
+/*stars*/
 
 .location-ratings {
     position: absolute;
     right: 0;
-    display: flex;
-    justify-content: space-around;
+    margin-top: 10px;
+    font-size: 14px;
 }
 
-
+.location-ratings .fa-star {
+    padding-right: 5px;
+}
 
 @media (max-width: 768px) {
     .alignitem {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-      
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
     }
-    
+
     .location-host-container {
-      order: 2;
-      flex-basis: 50%;
-      margin-top: 0;
+        order: 2;
+        flex-basis: 50%;
+        margin-top: 20px;
     }
 
     .location-ratings {
-      order: 1;
-      flex-basis: 50%;
-      position: static;
+        order: 1;
+        flex-basis: 50%;
+        position: static;
     }
 
-  
-
-    .location-host-picture {
-      height: 80px;
-    }
-  }
-
-
-.location-ratings .fa-star {
-    padding-right: 20px;
 }
 
+/*collapse*/
 
 .location-collapse-container {
     display: flex;
     flex-direction: row;
     gap: 20px;
     margin-top: 70px;
-
 }
 
 @media (max-width: 768px) {
     .location-collapse-container {
         flex-direction: column;
-        
     }
-   
-    
-    
 }
-
 
 .location-description,
 .location-equipment {
     flex-basis: 50%;
-
 }
-
 
 .collapse-button {
     width: 100%;
@@ -184,8 +206,6 @@ body {
     padding: 18px;
     font-size: 18px;
     border-radius: 10px;
-
-
 }
 
 .arrow {
@@ -194,26 +214,30 @@ body {
 
 .collapse-content {
     background: #F7F7F7;
-    border-radius: 0px 0px 10px 10px;
-
-
+    border-radius: 10px 10px 10px 10px;
+    height: 250px;
 }
 
 .collapse-content p {
     margin: 0;
-    padding: 20px;
-    margin-top: -10px;
+    padding: 25px;
+}
 
+.equipment-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+}
 
+.equipment-container span {
+    padding: 2px;
 }
 
 @media (max-width: 768px) {
- 
-    
-    .location-host-container, .location-ratings {
-      font-size: 0.8em;
+
+    .location-host-container,
+    .location-ratings {
+        font-size: 0.8em;
     }
-  
-   
-    
-  }
+}

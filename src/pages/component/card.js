@@ -2,13 +2,15 @@ import { Link } from "react-router-dom";
 
 function Logement({ id, title, cover }) {
   return (
-    <div className="logement">
-      <Link to={`/location/${id}`}>
-        <img src={cover} alt={title} />
+    <Link to={`/location/${id}`}>
+      <div className="logement" style={{ backgroundImage: `url(${cover})` }}>
+        <div className="img-shadow"></div>
         <h2>{title}</h2>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }
 
 export default Logement;
+
+

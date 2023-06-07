@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+import {faChevronLeft,faChevronRight,} from "@fortawesome/free-solid-svg-icons";
 
 function Carousel({ images }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

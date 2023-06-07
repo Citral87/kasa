@@ -56,36 +56,40 @@ function Location() {
           <h3 className="location-location">{locationData.location}</h3>
           <TagButtons tags={locationData.tags} />
           <div className="alignitem">
-          <div className="location-host-container">
-            <div className="location-host">
-              <img
-                className="location-host-picture"
-                src={locationData.host.picture}
-                alt={locationData.host.name}
-              />
+            <div className="location-host-container">
+              <div className="location-host">
+                <img
+                  className="location-host-picture"
+                  src={locationData.host.picture}
+                  alt={locationData.host.name}
+                />
+              </div>
+              <div className="location-host-name-container">
+                {locationData.host.name.split(" ").map((part, index) => (
+                  <p key={index} className="location-host-name">
+                    {part}
+                  </p>
+                ))}
+              </div>
             </div>
-            <div className="location-host-name-container">
-              <p className="location-host-name">{locationData.host.name}</p>
-            </div>
-          </div>
-          <div className="location-ratings">
-            {[...Array(5)].map((e, i) => (
-              <FontAwesomeIcon
-                key={i}
-                icon={faStar}
-                style={{
-                  color:
-                    i < Number(locationData.rating) ? "#FF6060" : "#E3E3E3",
-                }}
-              />
-              
-            ))}
+            <div className="location-ratings">
+              {[...Array(5)].map((e, i) => (
+                <FontAwesomeIcon
+                  key={i}
+                  icon={faStar}
+                  style={{
+                    color:
+                      i < Number(locationData.rating) ? "#FF6060" : "#E3E3E3",
+                  }}
+                />
+              ))}
             </div>
           </div>
           <div className="location-collapse-container">
             <div className="location-description">
               {locationData.description && (
                 <Collapse
+                  className="collapse-content_location"
                   title="Description"
                   isOpen={isDescriptionOpen}
                   toggle={() => setIsDescriptionOpen(!isDescriptionOpen)}
@@ -97,13 +101,16 @@ function Location() {
             <div className="location-equipment">
               {locationData.equipments && (
                 <Collapse
-                  title="Equipement"
+                  className="collapse-content_location"
+                  title="Équipements"
                   isOpen={isEquipmentOpen}
                   toggle={() => setIsEquipmentOpen(!isEquipmentOpen)}
                 >
-                  {locationData.equipments.map((item, index) => (
-                    <p key={index}>{item}</p>
-                  ))}
+                  <div className="equipment-container">
+                    {locationData.equipments.map((item, index) => (
+                      <span key={index}>{item}</span>
+                    ))}
+                  </div>
                 </Collapse>
               )}
             </div>
