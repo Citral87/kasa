@@ -3,10 +3,8 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: 2% 5%;
-text-align: center;
-
+  text-align: center;
 }
-
 
 header img {
   height: 45px;
@@ -19,13 +17,14 @@ header ul {
 
 header li {
   display: inline;
- 
+
 }
 
 header a {
   color: #FF6060;
-  text-decoration:none
+  text-decoration: none
 }
+
 header a:hover {
   text-decoration: underline;
 }
@@ -34,6 +33,7 @@ header li:not(:last-child) {
   display: inline;
   margin-right: 30px;
 }
+
 @media (max-width: 768px) {
   header li:not(:last-child) {
     margin-right: 30px;
@@ -41,12 +41,11 @@ header li:not(:last-child) {
 
   header a {
     font-size: 0.8em;
-    text-transform: uppercase; 
-    white-space: nowrap; 
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 }
 
-.active > a {
+.active>a {
   text-decoration: underline;
 }
-

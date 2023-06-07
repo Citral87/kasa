@@ -4,7 +4,7 @@ body {
 
 .NotFound__content {
     text-align: center;
-  
+
     color: #FF6060;
 }
 
@@ -13,16 +13,17 @@ body {
     font-size: 10em;
     font-weight: bold;
     margin-bottom: 40px;
+    padding-top: 100px;
 }
 
 .NotFound__content p {
     font-size: 1.2em;
-    margin-bottom: 95px;
+    margin-bottom: 130px;
     margin-top: -30px;
 }
 
 .NotFound__content a {
     color: #FF6060;
     text-decoration: underline;
-    font-size: 14px;
+    font-size: 12px;
 }
