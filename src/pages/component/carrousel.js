@@ -17,7 +17,7 @@ function Carousel({ images }) {
 
   return (
     <div className="carousel">
-      {images.length > 1 ? (
+      {images.length > 1 ? ( 
         <>
           <button
             className="carousel-btn carousel-btn-left"

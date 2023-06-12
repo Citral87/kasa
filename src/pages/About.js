@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Header from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/header.js";
-import Footer from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/footer.js";
-import Collapse from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/collapse.js";
-import "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/css/about.css";
-import photo from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/data/photo2.jpg";
+import Header from "./component/header.js";
+import Footer from "./component/footer";
+import Collapse from "./component/collapse";
+import "../assets/css/about.css";
+import photo from "../assets/data/photo2.jpg";
 
 function About() {
   const [isOpen1, setIsOpen1] = useState(false);

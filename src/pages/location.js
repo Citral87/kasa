@@ -10,13 +10,14 @@ import TagButtons from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa
 import Collapse from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/collapse.js";
 import "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/css/location.css";
 
+
 function Location() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [locationData, setLocationData] = useState(null);
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
   const [isEquipmentOpen, setIsEquipmentOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
 
   useEffect(() => {
     const fetchedData = data.find((item) => item.id === id);
@@ -30,19 +31,6 @@ function Location() {
   if (!locationData) {
     return null;
   }
-
-  const nextImage = () => {
-    setCurrentImageIndex(
-      (currentImageIndex + 1) % locationData.pictures.length
-    );
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex(
-      (currentImageIndex - 1 + locationData.pictures.length) %
-        locationData.pictures.length
-    );
-  };
 
   return (
     <div>
