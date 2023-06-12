@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
-import Error from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/error.js";
+import Error from "./error";
 import Location from "./location";
 
 function App() {

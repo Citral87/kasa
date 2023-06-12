@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "./component/header";
-import Footer from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/footer.js";
-import Logement from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/card.js";
-import logementData from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/data/logements.json";
-import "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/css/Home.css";
+import Footer from "../pages/component/footer";
+import Logement from "../pages/component/card";
+import logementData from "../assets/data/logements.json";
+import "../assets/css/Home.css";
 
 function Home() {
   return (
