@@ -1,6 +1,6 @@
 import React from "react";
-import "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/css/footer.css";
-import logo from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/data/LOGOnoir.jpg";
+import "../../assets/css/footer.css";
+import logo from "../../assets/data/LOGOn.png";
 
 function Footer() {
   return (
