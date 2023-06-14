@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
-import data from "../assets/data/logements.json";
+import data from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/data/logements.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import Carousel from "./component/carrousel.js";
-import TagButtons from "./component/tags_button.js";
-import Collapse from "./component/collapse.js";
-import "../assets/css/location.css";
+import Carousel from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/carrousel.js";
+import TagButtons from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/tags_button.js";
+import Collapse from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/collapse.js";
+import "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/css/location.css";
 
 
 function Location() {
