@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/header.js";
-import "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/css/error.css";
-import Footer from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/footer.js";
+import "../assets/css/error.css";
+import Header from "./component/header";
+import Footer from "../pages/component/footer";
 
 function NotFound() {
   return (
