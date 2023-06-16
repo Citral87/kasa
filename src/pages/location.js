@@ -2,23 +2,25 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
-import data from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/data/logements.json";
+import data from "../assets/data/logements.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import Carousel from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/carrousel.js";
-import TagButtons from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/tags_button.js";
-import Collapse from "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/pages/component/collapse.js";
-import "/Users/salzedasthierry/Desktop/Formation OC/kasa_p8/kasa/src/assets/css/location.css";
+import Carousel from "./component/carrousel.js";
+import TagButtons from "./component/tags_button.js";
+import Collapse from "./component/collapse.js";
+import "../assets/css/location.css";
 
-
+// Composant Location qui affiche les détails d'une location.
 function Location() {
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const { id } = useParams();  // Extraire l'id de la location depuis l'URL
+  const navigate = useNavigate();// Utiliser le hook useNavigate pour naviguer
+
+   // Définir le state pour les données de la location et les composants Collapse
   const [locationData, setLocationData] = useState(null);
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
   const [isEquipmentOpen, setIsEquipmentOpen] = useState(false);
   
-
+ // Utiliser le hook useEffect pour rechercher les données de la location à l'aide de l'id extrait de l'URL
   useEffect(() => {
     const fetchedData = data.find((item) => item.id === id);
     setLocationData(fetchedData);
@@ -28,6 +30,7 @@ function Location() {
     }
   }, [id, navigate]);
 
+  // Retourner null tant que les données de la location ne sont pas chargées
   if (!locationData) {
     return null;
   }
