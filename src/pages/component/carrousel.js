@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faChevronLeft,faChevronRight,} from "@fortawesome/free-solid-svg-icons";
-
+// Le composant Carousel est utilisée pour extraire directement la propriété d'images 
 function Carousel({ images }) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);// L'indice de l'image actuelle dans le carrousel
 
   const nextImage = () => {
-    setCurrentImageIndex((currentImageIndex + 1) % images.length);
+    setCurrentImageIndex((currentImageIndex + 1) % images.length);// La fonction qui est appelée quand l'utilisateur clique >
   };
 
   const prevImage = () => {
     setCurrentImageIndex(
-      (currentImageIndex - 1 + images.length) % images.length
+      (currentImageIndex - 1 + images.length) % images.length// La fonction qui est appelée quand l'utilisateur clique <
     );
   };
 
